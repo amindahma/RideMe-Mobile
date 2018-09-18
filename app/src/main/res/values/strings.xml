@@ -8,4 +8,12 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="user_details">userinfo</string>
+    <string name="USER_USERNAME">username</string>
+    <string name="USER_NIC">nic</string>
+    <string name="IP_ADDRESS">http://159.89.174.241:8095/</string>
+    <string name="BOOK_BIKE">book</string>
+    <string name="HISTORY">history</string>
+    <string name="notLogged">notLogged</string>
+    <string name="NO_INTERNET">network error</string>
 </resources>

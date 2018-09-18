@@ -1,0 +1,28 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="12"
+    tools:context="com.codemo.www.rideme.Fragments.HistoryFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <ListView
+        android:id="@+id/bookingList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="11" />
+
+    <ImageButton
+        android:id="@+id/refreshBtn"
+        style="@android:style/Widget.DeviceDefault.ImageButton"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@android:drawable/screen_background_light_transparent"
+        android:src="@drawable/ic_refresh" />
+
+
+</LinearLayout>
