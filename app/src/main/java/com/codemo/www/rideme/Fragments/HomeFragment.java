@@ -1,6 +1,7 @@
 package com.codemo.www.rideme.Fragments;
 
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -8,6 +9,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -88,14 +90,29 @@ public class HomeFragment extends Fragment {
             }
         };
         Calendar c = Calendar.getInstance();
-        String currentDate = DateFormat.getDateInstance(DateFormat.SHORT).format(c.getTime());
+//        String currentDate = DateFormat.getDateInstance(DateFormat.MEDIUM).format(c.getTime());
+        String currentDate = DateUtils.formatDateTime(main, c.getTimeInMillis(), DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_NUMERIC_DATE | DateUtils.FORMAT_SHOW_YEAR);
         selectDate.setText(currentDate);
         setDate(currentDate);
         book = (Button) view.findViewById(R.id.bookBtn);
         book.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                makeBooking();
+                if(type == "mountain" && pack == "uni"){
+                    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(main);
+                    alertDialogBuilder.setTitle("Invalid!");
+                    alertDialogBuilder.setMessage("Mountain bikes are not available for University students.").setCancelable(true);
+                    AlertDialog alertDialog = alertDialogBuilder.create();
+                    alertDialog.show();
+                }else if(hours > 12){
+                    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(main);
+                    alertDialogBuilder.setTitle("Invalid!");
+                    alertDialogBuilder.setMessage("Maximum number of hours(12) exceeded.").setCancelable(true);
+                    AlertDialog alertDialog = alertDialogBuilder.create();
+                    alertDialog.show();
+                }else{
+                    makeBooking();
+                }
             }
         });
         typeRadio = (RadioGroup) view.findViewById(R.id.typeRadio);

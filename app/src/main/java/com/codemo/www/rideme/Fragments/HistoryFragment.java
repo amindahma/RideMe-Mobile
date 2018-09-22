@@ -9,12 +9,18 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ListView;
 
+import com.codemo.www.rideme.Booking;
 import com.codemo.www.rideme.BookingListAdapter;
 import com.codemo.www.rideme.FetchHistory;
 import com.codemo.www.rideme.MainActivity;
 import com.codemo.www.rideme.R;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -61,7 +67,6 @@ public class HistoryFragment extends Fragment {
     }
 
     public void updateHistory(ArrayList bookingList){
-
         BookingListAdapter adapter = new BookingListAdapter(this.getContext(), R.layout.adapter_view_layout, bookingList);
         mListView.setAdapter(adapter);
     }

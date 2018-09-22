@@ -105,19 +105,20 @@ public class FetchHistory extends AsyncTask<String,Void,String []> {
                 String pack  = (String) jo.get("pack");
                 String date = (String) jo.get("date");
                 String rent = (String) jo.get("rent");
-                Booking b = new Booking(date, pack, rent);
+                String hours = (String) jo.get("hours");
+                String type = (String) jo.get("type");
+                Booking b = new Booking(date, pack, rent, type, hours);
                 bList.add(b);
             }
 
             if(obj.length() > 0){
                 main.updateHistory(bList);
-//                BusRouteFragment busRouteFragment = new BusRouteFragment();
-//                busRouteFragment.setMain(main);
-//                main.showFragment(busRouteFragment);
             }else{
                 Toast.makeText(main.getContext(), "No user history!", Toast.LENGTH_SHORT).show();
             }
         } catch (JSONException e) {
+            e.printStackTrace();
+        } catch (ClassCastException e) {
             e.printStackTrace();
         }
 

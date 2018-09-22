@@ -3,13 +3,13 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="100">
+    android:weightSum="3">
 
     <TextView
         android:id="@+id/dateText"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_weight="66.6"
+        android:layout_weight="1"
         android:gravity="center"
         android:text="TextView1"
         android:textAlignment="center" />
@@ -18,21 +18,38 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="33.3">
+        android:layout_weight="1">
 
         <TextView
-            android:gravity="center"
-            android:text="TextView2"
+            android:id="@+id/packText"
             android:layout_width="match_parent"
             android:layout_height="30dp"
-            android:id="@+id/packText"/>
+            android:text="TextView2" />
+
+        <TextView
+            android:id="@+id/hourText"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@+id/packText"
+            android:text="TextView3" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/typeText"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="TextView2" />
 
         <TextView
             android:id="@+id/rentText"
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_below="@+id/packText"
-            android:gravity="center"
             android:text="TextView3" />
     </LinearLayout>
 </LinearLayout>

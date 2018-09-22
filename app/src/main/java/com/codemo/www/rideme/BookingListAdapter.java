@@ -42,9 +42,11 @@ public class BookingListAdapter extends ArrayAdapter<Booking> {
         String date = getItem(position).getDate();
         String pack = getItem(position).getPack();
         String rent = getItem(position).getRent();
+        String type = getItem(position).getType();
+        String hours = getItem(position).getHours();
 
         //Create the booking object with the information
-        Booking person = new Booking(date,pack,rent);
+        Booking person = new Booking(date, pack, rent, type, hours);
 
 
         LayoutInflater inflater = LayoutInflater.from(mContext);
@@ -53,10 +55,14 @@ public class BookingListAdapter extends ArrayAdapter<Booking> {
         TextView dateTv = (TextView) convertView.findViewById(R.id.dateText);
         TextView packTv = (TextView) convertView.findViewById(R.id.packText);
         TextView rentTv = (TextView) convertView.findViewById(R.id.rentText);
+        TextView typeTv = (TextView) convertView.findViewById(R.id.typeText);
+        TextView hoursTv = (TextView) convertView.findViewById(R.id.hourText);
 
         dateTv.setText(date);
         packTv.setText(pack);
         rentTv.setText(rent);
+        typeTv.setText(type);
+        hoursTv.setText(hours);
 
         return convertView;
     }

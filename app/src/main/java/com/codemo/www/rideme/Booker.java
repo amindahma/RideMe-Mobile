@@ -126,7 +126,7 @@ public class Booker extends AsyncTask<String,Void,String []> {
             else if(obj.length() <= 3){
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(main);
                 alertDialogBuilder.setTitle("Booking Successful!");
-                alertDialogBuilder.setMessage("Bicycle No is"+obj).setCancelable(true);
+                alertDialogBuilder.setMessage("Bicycle No is: "+obj).setCancelable(true);
                 AlertDialog alertDialog = alertDialogBuilder.create();
                 alertDialog.show();
             }else{

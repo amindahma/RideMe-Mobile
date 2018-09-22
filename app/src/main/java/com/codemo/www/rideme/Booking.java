@@ -8,11 +8,15 @@ public class Booking {
     private String date;
     private String pack;
     private String rent;
+    private String type;
+    private String hours;
 
-    public Booking(String date, String pack, String rent) {
+    public Booking(String date, String pack, String rent, String type, String hours) {
         this.date = date;
         this.pack = pack;
         this.rent = rent;
+        this.setType(type);
+        this.setHours(hours);
     }
 
     public String getDate() {
@@ -37,5 +41,21 @@ public class Booking {
 
     public void setRent(String rent) {
         this.rent = rent;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getHours() {
+        return hours;
+    }
+
+    public void setHours(String hours) {
+        this.hours = hours;
     }
 }
